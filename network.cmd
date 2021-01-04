@@ -58,8 +58,11 @@ ss -antp
 :: Display local opend UDP ports
 ss -anupm
 
-:: display open TCP ports of a remote machine
+:: Display open TCP ports of a remote machine
 nmap -sS [remote machine ip adress]
 
-:: display open UDP ports of a remote machine
+:: Display open UDP ports of a remote machine
 nmap -sU [remote machine ip adress]
+
+:: Modern Ifconfig command
+ip -d addr
