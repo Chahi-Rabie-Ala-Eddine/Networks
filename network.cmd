@@ -22,6 +22,9 @@ arping [ip adress]
 :: Display Arp table
 arp -n
 
+:: Display Arp table
+cat /proc/net/arp
+
 :: Watch real time arp table
 watch arp -n
 
@@ -36,6 +39,15 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 :: Display route table 
 route -n
+
+:: Display route table
+ip route
+
+:: Display route table
+netstat -rn
+
+:: Display route table
+cat /proc/net/route
 
 :: Add default route to route table 
 route add default gw [ip adress of router port's]
@@ -58,11 +70,14 @@ ss -antp
 :: Display local opend UDP ports
 ss -anupm
 
-:: Display open TCP ports of a remote machine
+:: Display open TCP ports of a remote machine [FORBIDEN COMMAND]
 nmap -sS [remote machine ip adress]
 
-:: Display open UDP ports of a remote machine
+:: Display open UDP ports of a remote machine [FORBIDEN COMMAND]
 nmap -sU [remote machine ip adress]
 
 :: Modern Ifconfig command
 ip -d addr
+
+:: Display traced system calls of listened paquets
+strace tcpdump -n -i [interface] -n 
