@@ -10,8 +10,8 @@ ifconfig -a | egrep "([0-9]{1,3}\.){3}[0-9]{1,3}|$"
 :: Display IP Netmask and Broadcast adresses from eth0 interface
 ifconfig eth0 | egrep "([0-9]{1,3}\.){3}[0-9]{1,3}"
 
-:: Ping to a machine. Send only 2 paquets (-c 2
-ping -c [number of paquets] [ip adress]
+:: Check if a remote machine is available by sending n paquets of m bytes with t ttl
+ping -c [number of paquets] -s [size of paquets] -t [ttl value] [ip adress]
 
 :: Display used ports 
 netstat -4antp
@@ -59,7 +59,7 @@ route add -net [Network ip adress] netmask [mask adress] gw [ip adress of router
 route del -net [Network ip adress] netmask [mask adress]
 
 :: Lister to a specific interfce 
-tcpdump -i [interface] icmp
+tcpdump -nAXi [interface]
 
 :: Display the whole route of a pquet from our machine to website
 traceroute -I [website url]
