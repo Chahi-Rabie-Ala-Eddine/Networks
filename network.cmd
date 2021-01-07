@@ -81,3 +81,20 @@ ip -d addr
 
 :: Display traced system calls of listened paquets
 strace tcpdump -n -i [interface] -n 
+
+:: Display actual TCP connections 
+netstat -tnp
+
+:: Display actual TCP connections
+lsof -ni -P
+
+:: Display actual application's actions using its pid
+strace -p [pid]
+
+:: Listen to a specific port on an interfce 
+tcpdump -ni [interface] 'port [port ]'
+
+:: Establish a TCP connection with a server on a specific port
+nc [server] [port]
+
+
