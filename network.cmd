@@ -85,6 +85,9 @@ strace tcpdump -n -i [interface] -n
 :: Display actual TCP connections 
 netstat -tnp
 
+:: Display TCP and UDP connections with more informations
+netstat -atpun
+
 :: Display actual TCP connections
 lsof -ni -P
 
@@ -97,4 +100,5 @@ tcpdump -ni [interface] 'port [port ]'
 :: Establish a TCP connection with a server on a specific port
 nc [server] [port]
 
-
+:: Listen on a specific port on a specific interface
+nc -l -p [port] -s [ip adress]
