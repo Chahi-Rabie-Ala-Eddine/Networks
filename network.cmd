@@ -97,8 +97,8 @@ strace -p [pid]
 :: Listen to a specific port on an interfce 
 tcpdump -ni [interface] 'port [port ]'
 
-:: Establish a TCP connection with a server on a specific port
-nc [server] [port]
+:: Connect to a server on a specific port
+nc -v [server] [port]
 
 :: Listen on a specific port on a specific interface
 nc -l -p [port] -s [ip adress]
