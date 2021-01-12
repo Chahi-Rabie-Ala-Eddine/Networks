@@ -102,3 +102,6 @@ nc -v [server] [port]
 
 :: Listen on a specific port on a specific interface
 nc -l -p [port] -s [ip adress]
+
+:: Display route of paquet including interfaces 
+ip route get [ip adress]
