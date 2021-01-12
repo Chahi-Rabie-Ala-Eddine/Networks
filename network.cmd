@@ -55,6 +55,9 @@ route add default gw [ip adress of router port's]
 :: Add route to route table
 route add -net [Network ip adress] netmask [mask adress] gw [ip adress of router port's]
 
+:: Add route to route table
+ip route add [CIDR Network adress] via [router iterface ip adress]
+
 :: Delete route from route table
 route del -net [Network ip adress] netmask [mask adress]
 
@@ -105,3 +108,5 @@ nc -l -p [port] -s [ip adress]
 
 :: Display route of paquet including interfaces 
 ip route get [ip adress]
+
+
